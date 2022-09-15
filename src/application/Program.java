@@ -38,5 +38,13 @@ public class Program {
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! new id = " + newSeller.getId());
 		
+		System.out.println("=== TESTE 5:  seller Update ===");
+		seller = sellerDao.findById(1);
+		seller.setName("Marta Waine");
+		seller.setEmail("waine@gmail.com");
+		seller.setBirthDate(new Date());
+		seller.setBaseSalary(2000.0);
+		sellerDao.update(seller);
+		System.out.println("Update completed");
 	}
 }
