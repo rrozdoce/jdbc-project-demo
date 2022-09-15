@@ -1,5 +1,6 @@
 package model.dao;
 
+import db.DB;
 import model.impl.SellerDaoJDBC;
 
 // macete pra nao precisar expor a implementação
@@ -7,6 +8,6 @@ import model.impl.SellerDaoJDBC;
 public class DaoFactory {
     
 	public static SellerDao createSellerDao() {
-		return new SellerDaoJDBC();	
+		return new SellerDaoJDBC(DB.getConnection());	
 	}
 }
